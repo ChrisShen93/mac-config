@@ -1,0 +1,24 @@
+[user]
+	email = chrisshen93@gmail.com
+	name = chrisshen93
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit -m
+	mn = merge --no-ff
+	rb = rebase
+	ig = update-index --assume-unchanged
+	df = diff
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+	eol = lf
+	autocrlf = false
+	editor = vim
+[merge]
+	ff = only
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = true
