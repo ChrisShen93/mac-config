@@ -9,4 +9,5 @@ alias vim="nvim"
 
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh
 
