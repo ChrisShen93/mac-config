@@ -4,6 +4,7 @@
 
 [alias]
 	st = status
+  sw = switch
 	co = checkout
 	br = branch
 	ci = commit -m
@@ -11,7 +12,7 @@
 	rb = rebase
 	ig = update-index --assume-unchanged
 	df = diff
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	eol = lf
 	autocrlf = false
