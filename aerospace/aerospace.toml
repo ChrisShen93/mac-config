@@ -96,21 +96,29 @@ esc = 'mode main'
 8 = ['dell', 'built-in', 'main']
 9 = ['hp', 'built-in', 'main']
 
+# 设置部分窗口默认为悬浮布局
 # 可以使用 aerospace list-windows --all 命令查看
+
+# lark 图片预览
 [[on-window-detected]]
-# lark 图片预览默认使用悬浮布局
 if.app-name-regex-substring = 'Lark Helper'
 # 匹配窗口标题
 if.window-title-regex-substring = 'Picture'
 run = 'layout floating'
 
+# lark 会议
 [[on-window-detected]]
-# lark 会议默认使用悬浮布局
 if.app-name-regex-substring = 'Feishu Meetings'
 run = 'layout floating'
 
-[[on-window-detected]]
 # lark 聊天记录
+[[on-window-detected]]
 if.app-name-regex-substring = 'Feishu'
 if.window-title-regex-substring = 'chat between'
+run = 'layout floating'
+
+# 汽水音乐
+[[on-window-detected]]
+if.app-name-regex-substring = '汽水音乐'
+if.window-title-regex-substring = '汽水音乐'
 run = 'layout floating'
