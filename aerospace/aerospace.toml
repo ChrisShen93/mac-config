@@ -108,3 +108,9 @@ run = 'layout floating'
 # lark 会议默认使用悬浮布局
 if.app-name-regex-substring = 'Feishu Meetings'
 run = 'layout floating'
+
+[[on-window-detected]]
+# lark 聊天记录
+if.app-name-regex-substring = 'Feishu'
+if.window-title-regex-substring = 'chat between'
+run = 'layout floating'
