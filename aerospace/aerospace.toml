@@ -131,6 +131,12 @@ if.app-name-regex-substring = 'Feishu'
 if.window-title-regex-substring = 'chat between'
 run = 'layout floating'
 
+# lark 群聊记录
+[[on-window-detected]]
+if.app-name-regex-substring = 'Feishu'
+if.window-title-regex-substring = 'group chat'
+run = 'layout floating'
+
 # 汽水音乐
 [[on-window-detected]]
 if.app-name-regex-substring = '汽水音乐'
