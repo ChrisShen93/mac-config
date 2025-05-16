@@ -120,6 +120,13 @@ if.app-name-regex-substring = 'Lark Helper'
 if.window-title-regex-substring = 'Picture'
 run = 'layout floating'
 
+# lark 屏幕录制播放
+[[on-window-detected]]
+if.app-name-regex-substring = 'Lark Helper'
+# 匹配窗口标题
+if.window-title-regex-substring = 'Video player'
+run = 'layout floating'
+
 # lark 会议
 [[on-window-detected]]
 if.app-name-regex-substring = 'Feishu Meetings'
