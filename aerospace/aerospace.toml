@@ -1,80 +1,68 @@
-# Reference: https://github.com/i3/i3/blob/next/etc/config
+after-login-command = []
 
-# i3 doesn't have "normalizations" feature that why we disable them here.
-# But the feature is very helpful.
-# Normalizations eliminate all sorts of weird tree configurations that don't make sense.
-# Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+after-startup-command = []
 
-# Mouse follows focus when focused monitor changes
-## 下方为默认配置，此处根据个人习惯注释掉了
-# on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+default-root-container-layout = 'tiles'
+
+default-root-container-orientation = 'auto'
+
+key-mapping.preset = 'qwerty'
 
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-alt-enter = '''exec-and-forget osascript -e '
-    tell application "Terminal"
-        do script
-        activate
-    end tell'
-    '''
+# alt-enter = '''exec-and-forget osascript -e '
+#     tell application "Terminal"
+#         do script
+#         activate
+#     end tell'
+#     '''
 
-# i3 wraps focus by default
-# alt-j = 'focus --boundaries-action wrap-around-the-workspace left'
-# alt-k = 'focus --boundaries-action wrap-around-the-workspace down'
-# alt-l = 'focus --boundaries-action wrap-around-the-workspace up'
-# alt-semicolon = 'focus --boundaries-action wrap-around-the-workspace right'
-# custom shortcut
-alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
-alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
-alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
-alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+# alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+# alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+# alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+# alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+ctrl-shift-h = 'focus left'
+ctrl-shift-j = 'focus down'
+ctrl-shift-k = 'focus up'
+ctrl-shift-l = 'focus right'
 
-# alt-shift-j = 'move left'
-# alt-shift-k = 'move down'
-# alt-shift-l = 'move up'
-# alt-shift-semicolon = 'move right'
-# custom shortcut
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+alt-shift-b = 'balance-sizes'
+
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-# Consider using 'join-with' command as a 'split' replacement if you want to enable
-# normalizations
-# alt-h = 'split horizontal'
-# alt-v = 'split vertical'
-# custom shortcut
-alt-shift-s = 'split horizontal'
-alt-shift-v = 'split vertical'
+alt-shift-f = 'fullscreen'
+alt-shift-t = 'layout floating tiling' # Toggle between floating and tiling layout
 
-alt-f = 'fullscreen'
+# alt-shift-s = 'split horizontal'
+# alt-shift-v = 'split vertical'
+#
+# alt-s = 'layout v_accordion'               # 'layout stacking' in i3
+# alt-w = 'layout h_accordion'               # 'layout tabbed' in i3
+# alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
-alt-s = 'layout v_accordion'               # 'layout stacking' in i3
-alt-w = 'layout h_accordion'               # 'layout tabbed' in i3
-alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+ctrl-shift-n = 'workspace next'
+ctrl-shift-p = 'workspace prev'
 
-alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
-
-# Not supported, because this command is redundant in AeroSpace mental model.
-# See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
-#alt-space = 'focus toggle_tiling_floating'
-
-# `focus parent`/`focus child` are not yet supported, and it's not clear whether they
-# should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
-# alt-a = 'focus parent'
-
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-0 = 'workspace 10'
+ctrl-shift-1 = 'workspace 1'
+ctrl-shift-2 = 'workspace 2'
+ctrl-shift-3 = 'workspace 3'
+ctrl-shift-4 = 'workspace 4'
+ctrl-shift-5 = 'workspace 5'
+ctrl-shift-6 = 'workspace 6'
+ctrl-shift-7 = 'workspace 7'
+ctrl-shift-8 = 'workspace 8'
+ctrl-shift-9 = 'workspace 9'
+ctrl-shift-0 = 'workspace 10'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -87,31 +75,53 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-shift-c = 'reload-config'
+ctrl-shift-space = 'mode service'
 
-alt-r = 'mode resize'
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+space = ['reload-config', 'mode main']
+s = ['flatten-workspace-tree', 'mode main'] # reset layout
 
-[mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
-enter = 'mode main'
-esc = 'mode main'
+slash = 'layout tiles horizontal vertical'
+comma = 'layout accordion horizontal vertical'
 
 [workspace-to-monitor-force-assignment]
 1 = ['built-in', 'main']
 2 = ['built-in', 'main']
 3 = ['built-in', 'main']
 4 = ['built-in', 'main']
-5 = ['built-in', 'main']
+5 = ['dell', 'built-in', 'main']
 6 = ['dell', 'built-in', 'main']
 7 = ['dell', 'built-in', 'main']
 8 = ['dell', 'built-in', 'main']
 9 = ['hp', 'built-in', 'main']
+10 = ['hp', 'built-in', 'main']
 
 # 设置部分窗口默认为悬浮布局
-# 可以使用 aerospace list-windows --all 命令查看
+# 可以使用 aerospace list-windows --all 命令查看窗口
+# aerospace list-apps 查看app列表
+
+# 默认将lark平铺布局
+# [[on-window-detected]]
+# if.app-id = "com.electron.lark"
+# if.app-name-regex-substring = "Feishu"
+# run = 'layout tiling'
+#
+# 默认将lark的工具浮动布局
+# 包括图片预览
+# [[on-window-detected]]
+# if.app-id = "com.electron.lark.helper"
+# run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Feishu'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Feishu'
+# 匹配窗口标题
+if.window-title-regex-substring = 'Feishu'
+run = 'layout tiling'
 
 # lark 图片预览
 [[on-window-detected]]
@@ -142,6 +152,12 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-name-regex-substring = 'Feishu'
 if.window-title-regex-substring = 'group chat'
+run = 'layout floating'
+
+# lark 编辑日程
+[[on-window-detected]]
+if.app-name-regex-substring = 'Feishu'
+if.window-title-regex-substring = 'Edit event'
 run = 'layout floating'
 
 # 汽水音乐
