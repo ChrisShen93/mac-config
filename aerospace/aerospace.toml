@@ -63,6 +63,7 @@ ctrl-shift-7 = 'workspace 7'
 ctrl-shift-8 = 'workspace 8'
 ctrl-shift-9 = 'workspace 9'
 ctrl-shift-0 = 'workspace 10'
+ctrl-shift-a = 'workspace a'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -74,6 +75,10 @@ alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
+alt-shift-a = 'move-node-to-workspace a'
+
+alt-shift-n = 'move-node-to-workspace next'
+alt-shift-p = 'move-node-to-workspace prev'
 
 ctrl-shift-space = 'mode service'
 
@@ -90,12 +95,13 @@ comma = 'layout accordion horizontal vertical'
 2 = ['built-in', 'main']
 3 = ['built-in', 'main']
 4 = ['built-in', 'main']
-5 = ['dell', 'built-in', 'main']
-6 = ['dell', 'built-in', 'main']
-7 = ['dell', 'built-in', 'main']
-8 = ['dell', 'built-in', 'main']
-9 = ['hp', 'built-in', 'main']
-10 = ['hp', 'built-in', 'main']
+5 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
+6 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
+7 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
+8 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
+9 = ['hp z27u', 'dell u2415', 'built-in', 'main']
+10 = ['hp z27u', 'dell u2415', 'built-in', 'main']
+a = ['sidecar']
 
 # 设置部分窗口默认为悬浮布局
 # 可以使用 aerospace list-windows --all 命令查看窗口
@@ -117,11 +123,19 @@ comma = 'layout accordion horizontal vertical'
 if.app-name-regex-substring = 'Feishu'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'Feishu'
-# 匹配窗口标题
-if.window-title-regex-substring = 'Feishu'
-run = 'layout tiling'
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Feishu'
+# # 匹配窗口标题
+# if.window-title-regex-substring = 'Feishu'
+# run = 'layout tiling'
+
+# 将lark的搜索弹窗改为floating布局
+# 怀疑是window-title为后置，因此此处不会生效
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Feishu'
+# # 匹配窗口标题
+# if.window-title-regex-substring = 'ModalWebViewWidget'
+# run = 'layout floating'
 
 # lark 图片预览
 [[on-window-detected]]
