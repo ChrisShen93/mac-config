@@ -41,7 +41,7 @@ multiplier = 3
 
 [window]
 opacity = 0.88
-decorations = "transparent"
+decorations = "buttonless"
 
 [window.padding]
 x = 0
