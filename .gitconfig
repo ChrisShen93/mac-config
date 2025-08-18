@@ -16,7 +16,7 @@
 [core]
 	eol = lf
 	autocrlf = false
-	editor = vim
+	editor = nvim
 [merge]
 	ff = only
 [branch]
