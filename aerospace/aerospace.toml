@@ -99,8 +99,8 @@ comma = 'layout accordion horizontal vertical'
 6 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
 7 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
 8 = ['dell u2723qe', 'dell u2412M', 'built-in', 'main']
-9 = ['hp z27u', 'dell u2415', 'built-in', 'main']
-10 = ['hp z27u', 'dell u2415', 'built-in', 'main']
+9 = ['dell u2724', 'dell u2415', 'built-in', 'main']
+10 = ['dell u2724', 'dell u2415', 'built-in', 'main']
 a = ['sidecar']
 
 # 设置部分窗口默认为悬浮布局
@@ -137,18 +137,32 @@ run = 'layout floating'
 # if.window-title-regex-substring = 'ModalWebViewWidget'
 # run = 'layout floating'
 
-# lark 图片预览
+# lark 图片预览 英文
 [[on-window-detected]]
 if.app-name-regex-substring = 'Lark Helper'
 # 匹配窗口标题
 if.window-title-regex-substring = 'Picture'
 run = 'layout floating'
 
-# lark 屏幕录制播放
+# lark 图片预览 中文
+[[on-window-detected]]
+if.app-name-regex-substring = 'Lark Helper'
+# 匹配窗口标题
+if.window-title-regex-substring = '图片'
+run = 'layout floating'
+
+# lark 屏幕录制播放 英文
 [[on-window-detected]]
 if.app-name-regex-substring = 'Lark Helper'
 # 匹配窗口标题
 if.window-title-regex-substring = 'Video player'
+run = 'layout floating'
+
+# lark 屏幕录制播放 中文
+[[on-window-detected]]
+if.app-name-regex-substring = 'Lark Helper'
+# 匹配窗口标题
+if.window-title-regex-substring = '视频播放器'
 run = 'layout floating'
 
 # lark 会议
