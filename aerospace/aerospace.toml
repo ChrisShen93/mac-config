@@ -95,11 +95,11 @@ comma = 'layout accordion horizontal vertical'
 2 = ['built-in', 'main']
 3 = ['built-in', 'main']
 4 = ['built-in', 'main']
-5 = ['dell u2723qe', 'dell u2415', 'built-in', 'main']
-6 = ['dell u2723qe', 'dell u2415', 'built-in', 'main']
-7 = ['dell u2723qe', 'dell u2415', 'built-in', 'main']
-8 = ['dell u2723qe', 'dell u2415', 'built-in', 'main']
-9 = ['dell u2724', 'dell u2412m', 'built-in', 'main']
+5 = ['hp', 'dell u2723qe', 'dell u2415', 'built-in', 'main']
+6 = ['hp', 'dell u2723qe', 'dell u2415', 'built-in', 'main']
+7 = ['hp', 'dell u2723qe', 'dell u2415', 'built-in', 'main']
+8 = ['hp', 'dell u2723qe', 'dell u2415', 'built-in', 'main']
+9 = ['hp', 'dell u2724', 'dell u2412m', 'built-in', 'main']
 10 = ['dell u2724', 'dell u2412m', 'built-in', 'main']
 a = ['sidecar']
 
@@ -168,7 +168,11 @@ run = 'layout floating'
 # lark 会议
 [[on-window-detected]]
 if.app-name-regex-substring = 'Feishu Meetings'
-run = ['layout tiling', 'move-node-to-workspace 8']
+run = [
+  'layout floating',
+  'move-node-to-workspace 8',
+  'macos-native-fullscreen --window-id 8',
+]
 
 # lark 聊天记录
 [[on-window-detected]]
