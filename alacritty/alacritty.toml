@@ -41,7 +41,7 @@ multiplier = 3
 
 [window]
 opacity = 0.88
-decorations = "buttonless"
+# decorations = "buttonless"
 
 [window.padding]
 x = 0
@@ -49,3 +49,6 @@ y = 0
 
 [general]
 import = ["~/.config/alacritty/catppuccin-frappe.toml"]
+
+[terminal]
+osc52 = "CopyPaste"

@@ -1,0 +1,3 @@
+os:
+  # make it possible to copy in TTY mode
+  copyToClipboardCmd: "printf \"\\033]52;c;$(printf {{text}} | base64 | tr -d '\\n')\\a\" > /dev/tty"
