@@ -1,0 +1,88 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
+	"autoupdate": true,
+	// All instruction files are combined with your AGENTS.md files.
+	"instructions": [
+		"packages/*/AGENTS.md",
+		"README.md",
+		"CONTRIBUTING.md",
+		"docs/guidelines.md",
+		".cursor/rules/*.md"
+	],
+	"provider": {
+		"volcengine-plan": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Volcano Engine",
+			"options": {
+				"baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3",
+				"apiKey": "{file:./.secrets/volcengine}"
+			},
+			"models": {
+				"glm-4.7": {
+					"name": "glm-4.7",
+					"limit": {
+						"context": 200000,
+						"output": 4096
+					},
+					"modalities": {
+						"input": ["text"],
+						"output": ["text"]
+					}
+				},
+				"deepseek-v3.2": {
+					"name": "deepseek-v3.2",
+					"limit": {
+						"context": 128000,
+						"output": 4096
+					}
+				},
+				"minimax-m2.5": {
+					"name": "minimax-m2.5",
+					"limit": {
+						"context": 200000,
+						"output": 4096
+					},
+					"modalities": {
+						"input": ["text"],
+						"output": ["text"]
+					}
+				},
+				"kimi-k2.5": {
+					"name": "kimi-k2.5",
+					"limit": {
+						"context": 256000,
+						"output": 4096
+					},
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
+			}
+		}
+	},
+	"mcp": {
+		"context7": {
+			"type": "remote",
+			"url": "https://mcp.context7.com/mcp",
+			"headers": {
+				"CONTEXT7_API_KEY": "{file:./.secrets/context7}"
+			},
+			"enabled": true
+		},
+		"gitdocs": {
+			"type": "remote",
+			"url": "https://gitmcp.io/docs",
+			"enabled": true
+		},
+		"chrome-devtools": {
+			"type": "local",
+			"command": ["pnpx", "chrome-devtools-mcp@latest"]
+		}
+	},
+	"compaction": {
+		"auto": true,
+		"prune": true
+	}
+}

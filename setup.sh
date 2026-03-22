@@ -138,6 +138,10 @@ for item in "$SCRIPT_DIR/zed"/*; do
     link_config "$item" "$HOME/.config/zed/$basename_item"
 done
 
+# Opencode configuration
+info "Setting up Opencode configuration..."
+link_config "$SCRIPT_DIR/opencode" "$HOME/.config/opencode"
+
 echo ""
 echo -e "${BLUE}--- Post-Setup Instructions ---${NC}"
 
