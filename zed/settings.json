@@ -8,13 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "vim_mode": true,
   "base_keymap": "VSCode",
   "use_smartcase_search": true,
   "gutter": {
-    "line_numbers": true
+    "line_numbers": true,
   },
   "cursor_shape": "bar",
   "file_types": {
@@ -23,7 +23,7 @@
     ],
     "postcss": [
       "*.css"
-    ]
+    ],
   },
   "soft_wrap": "none",
   "hard_tabs": true,
@@ -38,10 +38,13 @@
   },
   "agent_servers": {
     "OpenCode": {
+      "type": "custom",
       "command": "opencode",
       "args": [
         "acp"
-      ]
-    }
-  }
+      ],
+    },
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
 }
