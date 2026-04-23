@@ -104,7 +104,14 @@ echo -e "${BLUE}--- Deploying Configurations ---${NC}"
 info "Setting up Zsh configuration..."
 link_config "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 link_config "$SCRIPT_DIR/.zprofile" "$HOME/.zprofile"
-link_config "$SCRIPT_DIR/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh" "$HOME/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh"
+
+# Sheldon configuration
+info "Setting up Sheldon configuration..."
+link_config "$SCRIPT_DIR/sheldon" "$HOME/.config/sheldon"
+
+# Starship configuration
+info "Setting up Starship configuration..."
+link_config "$SCRIPT_DIR/starship.toml" "$HOME/.config/starship.toml"
 
 # Tmux configuration
 info "Setting up Tmux configuration..."

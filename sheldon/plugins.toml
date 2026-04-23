@@ -1,0 +1,40 @@
+shell = "zsh"
+
+# 1) Completions - add to fpath before compinit
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["fpath", "source"]
+
+# 2) Initialize completion system (must be before fzf-tab)
+[plugins.compinit]
+inline = 'autoload -Uz compinit && compinit -C'
+
+# 3) fzf-tab - must be after compinit, before widget-wrapping plugins
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+# 4) Widget-wrapping plugins - must be after fzf-tab
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+# 5) Up/Down arrow searches history by prefix
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+# 6) ls colors via eza (fallback to macOS native colors)
+[plugins.ls-colors]
+inline = '''
+if command -v eza &>/dev/null; then
+  alias ls='eza --icons'
+  alias ll='eza -l --icons'
+  alias la='eza -la --icons'
+  alias lt='eza -T --icons'
+else
+  export CLICOLOR=1
+  export LSCOLORS="ExFxCxDxBxegedabagacad"
+fi
+'''

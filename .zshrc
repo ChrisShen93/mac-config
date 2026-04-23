@@ -1,13 +1,15 @@
-export ZSH="$HOME/.oh-my-zsh"
+eval "$(sheldon source)"
 
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="ys"
-
-plugins=(git)
+# history-substring-search keybindings (must be after plugin load)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 alias vim="nvim"
 
-source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh
+eval "$(starship init zsh)"
+
+export PATH=$HOME/.local/bin:$PYENV_ROOT/bin:$HOME/.bun/bin:$HOME/go/bin:$PATH
+
+# for opencode
+export EDITOR=vim
 
