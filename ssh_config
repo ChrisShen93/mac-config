@@ -2,4 +2,4 @@ Host github.com
     Hostname ssh.github.com
     Port 443
     User ChrisShen93
-    IdentityFile ./github
+    IdentityFile ~/.ssh/github
